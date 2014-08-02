@@ -226,18 +226,25 @@ function showFile(data) {
 function highlightLine(line, numLines) {
     var codeHeight = $code.height();
     var heightPerLine = codeHeight / numLines;
-    
-    $code.css({
+    $('span.linenum').css({});
+    $('span[line="'+line+'"]').css({
+        'background-color': 'yellow',
         'background-image': 'url("img/breakpoint-arrow.png"), url("img/breakpoint-bg.png")',
         'background-repeat': 'no-repeat, no-repeat, repeat-y',
-        'background-size': '9px 7px, 100% '+Math.round(heightPerLine)+'px',
-        'background-position': '5px '+Math.round((line - 1) * heightPerLine + ((heightPerLine - 7) / 2))+'px, '+
-                               '0px '+Math.round((line - 1) * heightPerLine)+'px'
-    });
+        'background-position-y' : '5px'
+    })
+    // $code.css({
+    //     'background-image': 'url("img/breakpoint-arrow.png"), url("img/breakpoint-bg.png")',
+    //     'background-repeat': 'no-repeat, no-repeat, repeat-y',
+    //     'background-size': '9px 7px, 100% '+Math.round(heightPerLine)+'px',
+    //     'background-position': '5px '+Math.round((line - 1) * heightPerLine + ((heightPerLine - 7) / 2))+'px, '+
+    //                            '0px '+Math.round((line - 1) * heightPerLine)+'px'
+    // });
 }
 
 function removeLineHightlight() {
-    $code.css({ 'background-image': '' });
+    //$code.css({ 'background-image': '' });
+     $('span.linenum').css({});
 }
 
 function paintBreakpoints(file) {
