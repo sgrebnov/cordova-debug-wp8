@@ -1,7 +1,7 @@
 var config = require('./Aardwolf/config/config.defaults.js');
 
 /* Hostname or IP of the local machine */
-config.serverHost = '10.0.8.254';
+config.serverHost = '__SERVER_HOST__';
 
 /* port on which the server listens for requests */
 config.serverPort = '8000';
